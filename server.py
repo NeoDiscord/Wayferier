@@ -62,9 +62,12 @@ def search_live_contracts(keyword: str = None, limit: int = 5) -> str:
         return json.dumps(clean_results, indent=2)
 
     except Exception as e:
-        # Gracefully inform the AI client of backend errors instead of crashing the process
+        # err
         return f"Error fetching from government database: {str(e)}"
 
+# web interface
+app = mcp.get_asgi_app()
+
 if __name__ == "__main__":
-    # 0.0.0.0 ensures the cloud provider can bind to it properly
-    mcp.run(transport="sse", host="0.0.0.0", port=8000)
+    # test
+    mcp.run(transport="sse")
