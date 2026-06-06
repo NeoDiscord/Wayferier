@@ -65,9 +65,8 @@ def search_live_contracts(keyword: str = None, limit: int = 5) -> str:
         # err
         return f"Error fetching from government database: {str(e)}"
 
-# web interface
-app = mcp.get_asgi_app()
+app = mcp
 
 if __name__ == "__main__":
-    # test
+    # Local fallback for development testing
     mcp.run(transport="sse")
