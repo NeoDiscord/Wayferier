@@ -66,7 +66,7 @@ def search_live_contracts(keyword: str = None, limit: int = 5) -> str:
         return f"Error fetching from government database: {str(e)}"
 
 
-app = mcp.asgi_app
+app = mcp.sse_app
 
 if __name__ == "__main__":
     mcp.run(transport="sse")
