@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
 load_dotenv()
-mcp = FastMCP("Wayfarer")
+mcp = FastMCP("Wayfarer", host="0.0.0.0")
 API_KEY = os.environ.get("SAM_API_KEY")
 
 @mcp.tool()
